@@ -5,13 +5,15 @@ learningRate = 0.01
 Epochs = 30
 
 Dimentions = 2
-NumberOfClasters = 3
+NumberOfClasters = 4
 testDataX = np.genfromtxt("testDataX.txt", dtype='float')
 testDataY = np.genfromtxt("testDataY.txt", dtype='float')
-NumberOfTrainVectors = np.size(testDataX)
+NumberOfTrainVectors = 1000
+#NumberOfTrainVectors = np.size(testDataX)
 
-inputTrainVectors = np.array([testDataX, testDataY])
-#inputTrainVectors = np.random.uniform(size=(Dimentions, NumberOfTrainVectors))
+
+#inputTrainVectors = np.array([testDataX, testDataY])
+inputTrainVectors = np.random.uniform(size=(Dimentions, NumberOfTrainVectors))
 WeightsOfClasters = np.random.uniform(size=(Dimentions, NumberOfClasters))
 
 DistanceVectorToClaster = np.zeros(shape=(Dimentions, 1))
@@ -57,7 +59,7 @@ print(WeightsOfClasters)
 
 PlotGraph(1, NumberOfClasters, WeightsOfClasters, 'red', 'o')
 
-Statistica = np.array([[-1.013, -0.432, 0.54], [-0.023, 1.911, -2.166]])
-PlotGraph(1, NumberOfClasters, Statistica, 'blue', '^')
+#Statistica = np.array([[-1.013, -0.432, 0.54], [-0.023, 1.911, -2.166]])
+#PlotGraph(1, NumberOfClasters, Statistica, 'blue', '^')
 
 plt.show()
